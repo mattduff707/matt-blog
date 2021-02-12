@@ -10,11 +10,13 @@ export const query = graphql`
         date
       }
       html
+      htmlAst
     }
   }
 `
 
 const BlogTemplate = ({ data }) => {
+  console.log(data.markdownRemark.htmlAst)
   const markdownRemark = data.markdownRemark
 
   return (
