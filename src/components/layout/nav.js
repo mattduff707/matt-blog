@@ -2,23 +2,25 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-const FlexNav = styled.nav`
+const NavCell = styled.nav`
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+  grid-area: navigation;
+  height: 100%;
 `
 
 const NavUl = styled.ul`
   background-color: #c44244;
   display: flex;
   flex-direction: column;
-  height: 50vh;
-  min-width: 400px;
+  justify-content: center;
+  width: 100%;
   list-style: none;
   padding: 20px 0px;
 `
 
 const LinkContainer = styled.li`
-  margin: 0px 5px;
+  margin: 20px 5px;
   text-align: center;
 `
 
@@ -36,7 +38,7 @@ const StyledLink = styled(Link)`
 
 const nav = () => {
   return (
-    <FlexNav>
+    <NavCell>
       <NavUl>
         <LinkContainer>
           <StyledLink to="/">Main</StyledLink>
@@ -48,7 +50,7 @@ const nav = () => {
           <StyledLink to="/about">About</StyledLink>
         </LinkContainer>
       </NavUl>
-    </FlexNav>
+    </NavCell>
   )
 }
 
