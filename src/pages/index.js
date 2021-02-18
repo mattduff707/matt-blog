@@ -10,7 +10,7 @@ const ContentCell = styled.section`
 export default function Home() {
   return (
     <Layout>
-      <ContentCell><p></p></ContentCell>
+      <ContentCell><p>Content</p></ContentCell>
     </Layout>
   )
 }
