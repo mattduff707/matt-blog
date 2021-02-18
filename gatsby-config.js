@@ -8,8 +8,18 @@ module.exports = {
   /* Your site config here */
   plugins: [
     `gatsby-plugin-styled-components`,
+    `gatsby-remark-prismjs`,
     {
       resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-custom-html`,
+         {
+          resolve: `gatsby-remark-prismjs`,
+          options: {},
+        },
+      ]
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,

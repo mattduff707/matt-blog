@@ -6,7 +6,7 @@ const AccessibilityCell = styled.aside`
   grid-area: accessibility;
   width: 100%;
   height: 100%;
-  background-color: wheat;
+  background-color: var(--color-primary);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,18 +30,18 @@ const Test = styled.div`
 
 
 
-const Accessability = () => {
+const Accessibility = ({changeTheme}) => {
   return (
     <AccessibilityCell>
       <Test>
         <Heading level={1} >Settings</Heading>
       </Test>
       <ButtonsUl>
-        <button>Theme</button>
-        <button>Text Size</button>
+        <button onClick={changeTheme} value={'dark'}>Theme</button>
+        <button onClick={changeTheme} value={'light'}>Text Size</button>
       </ButtonsUl>
     </AccessibilityCell>
     )
 }
 
-export default Accessability
+export default Accessibility

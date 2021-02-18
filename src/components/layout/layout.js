@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import styled, {createGlobalStyle} from "styled-components"
 
 import Nav from "./nav"
@@ -8,7 +8,7 @@ import About from './about'
 const GlobalStyles = createGlobalStyle`
   html {
     --color-text: #383838;
-    --color-primary: indianRed;
+    --color-primary: ${props => props.theme === "dark" ? 'black' : props.theme === "light" ? 'wheat' : 'red'};
     --color-secondary: wheat;
     --text-blog-post: 1.2em;
 
@@ -33,22 +33,24 @@ const PageContainer = styled.div`
 `
 const MainCell = styled.main`
   grid-area: main;
-  
+
 `
 
-const layout = ({ children }) => {
+
+const Layout = ({ children }) => {
+
+
   return (
     <PageContainer>
-      <GlobalStyles />
+      <GlobalStyles  />
       <header>
         <Nav />
-        <Accessibility />
+        <Accessibility  />
         <About />
       </header>
       <MainCell>{children}</MainCell>
-      <footer></footer>
     </PageContainer>
   )
 }
 
-export default layout
+export default Layout
