@@ -1,6 +1,6 @@
 import React from "react"
-import styled from 'styled-components'
-import Heading from '../heading'
+import styled from "styled-components"
+import Heading from "../heading"
 
 const AccessibilityCell = styled.aside`
   grid-area: accessibility;
@@ -25,23 +25,24 @@ const Test = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-
 `
 
-
-
-const Accessibility = ({changeTheme}) => {
+const Accessibility = ({ changeTheme }) => {
   return (
     <AccessibilityCell>
       <Test>
-        <Heading level={1} >Settings</Heading>
+        <Heading level={1}>Settings</Heading>
       </Test>
       <ButtonsUl>
-        <button onClick={changeTheme} value={'dark'}>Theme</button>
-        <button onClick={changeTheme} value={'light'}>Text Size</button>
+        <button onClick={changeTheme} value={"dark"}>
+          Theme
+        </button>
+        <button onClick={changeTheme} value={"light"}>
+          Text Size
+        </button>
       </ButtonsUl>
     </AccessibilityCell>
-    )
+  )
 }
 
 export default Accessibility

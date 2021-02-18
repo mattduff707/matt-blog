@@ -1,14 +1,19 @@
-import React, {useState} from "react"
-import styled, {createGlobalStyle} from "styled-components"
+import React, { useState } from "react"
+import styled, { createGlobalStyle } from "styled-components"
 
 import Nav from "./nav"
-import Accessibility from './accessibility'
-import About from './about'
+import Accessibility from "./accessibility"
+import About from "./about"
 
 const GlobalStyles = createGlobalStyle`
   html {
     --color-text: #383838;
-    --color-primary: ${props => props.theme === "dark" ? 'black' : props.theme === "light" ? 'wheat' : 'red'};
+    --color-primary: ${props =>
+      props.theme === "dark"
+        ? "black"
+        : props.theme === "light"
+        ? "wheat"
+        : "red"};
     --color-secondary: wheat;
     --text-blog-post: 1.2em;
 
@@ -25,27 +30,22 @@ const PageContainer = styled.div`
   display: grid;
   grid-template-columns: 300px 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas: 
-  "navigation main"
-  "accessibility main"
-  "about main"
-  ;
+  grid-template-areas:
+    "navigation main"
+    "accessibility main"
+    "about main";
 `
 const MainCell = styled.main`
   grid-area: main;
-
 `
 
-
 const Layout = ({ children }) => {
-
-
   return (
     <PageContainer>
-      <GlobalStyles  />
+      <GlobalStyles />
       <header>
         <Nav />
-        <Accessibility  />
+        <Accessibility />
         <About />
       </header>
       <MainCell>{children}</MainCell>

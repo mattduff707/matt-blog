@@ -14,12 +14,12 @@ module.exports = {
       options: {
         plugins: [
           `gatsby-remark-custom-html`,
-         {
-          resolve: `gatsby-remark-prismjs`,
-          options: {},
-        },
-      ]
-      }
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {},
+          },
+        ],
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,

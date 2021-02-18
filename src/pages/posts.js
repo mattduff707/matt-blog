@@ -59,6 +59,8 @@ const Posts = () => {
               title
               path
               date
+              category
+              tags
             }
             fields {
               slug
@@ -68,7 +70,6 @@ const Posts = () => {
       }
     }
   `)
-
   return (
     <Layout>
       <PageContainer>

@@ -1,7 +1,6 @@
 const visit = require("unist-util-visit")
 const toString = require("mdast-util-to-string")
 
-
 module.exports = ({ markdownAST }, pluginOptions) => {
   visit(markdownAST, "heading", node => {
     let { depth } = node
