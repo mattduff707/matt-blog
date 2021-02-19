@@ -6,6 +6,7 @@ import Heading from "../components/heading"
 
 const PostWrapper = styled.article`
   display: grid;
+
   grid-template-columns:
     1fr
     min(65ch, 100%)
@@ -14,6 +15,10 @@ const PostWrapper = styled.article`
   & > * {
     grid-column: 2;
   }
+`
+const Wrapper = styled.div`
+  background-color: var(--color-text);
+  min-height: 100vh;
 `
 
 export const query = graphql`
@@ -31,18 +36,19 @@ export const query = graphql`
 
 const BlogTemplate = ({ data }) => {
   const markdownRemark = data.markdownRemark
-  console.log(markdownRemark.frontmatter.tags)
   return (
     <Layout>
-      <PostWrapper>
-        <Heading size={"2.5em"} level={1} margin={"20px 0px 5px 0px"}>
-          {markdownRemark.frontmatter.title}
-        </Heading>
-        <Heading size={"1em"} level={2} margin={"0px 0px 20px 0px"}>
-          {markdownRemark.frontmatter.date}
-        </Heading>
-        <div dangerouslySetInnerHTML={{ __html: markdownRemark.html }}></div>
-      </PostWrapper>
+      <Wrapper>
+        <PostWrapper>
+          <Heading size={"2.5em"} level={1} margin={"20px 0px 5px 0px"}>
+            {markdownRemark.frontmatter.title}
+          </Heading>
+          <Heading size={"1em"} level={2} margin={"0px 0px 20px 0px"}>
+            {markdownRemark.frontmatter.date}
+          </Heading>
+          <div dangerouslySetInnerHTML={{ __html: markdownRemark.html }}></div>
+        </PostWrapper>
+      </Wrapper>
     </Layout>
   )
 }

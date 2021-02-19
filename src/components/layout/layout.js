@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import styled, { createGlobalStyle } from "styled-components"
 
 import Nav from "./nav"
@@ -23,6 +23,7 @@ const GlobalStyles = createGlobalStyle`
 
 const PageContainer = styled.div`
   height: 100vh;
+  overflow: hidden;
   display: grid;
   grid-template-columns: 300px 1fr;
   grid-template-rows: 1fr 1fr 1fr;
@@ -39,6 +40,7 @@ const HeaderWrapper = styled.header`
 `
 const MainCell = styled.main`
   grid-area: main;
+  overflow-y: scroll;
 `
 
 const Layout = ({ children }) => {

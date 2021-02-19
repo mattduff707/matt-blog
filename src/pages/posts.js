@@ -2,7 +2,6 @@ import React from "react"
 import Layout from "../components/layout/layout"
 import styled from "styled-components"
 import { Link, graphql, useStaticQuery } from "gatsby"
-import categories from "../constants/constants"
 import Heading from "../components/heading"
 
 const PageContainer = styled.section`
@@ -18,7 +17,6 @@ const CategoryContainer = styled.div`
   display: flex;
   width: 100%;
   flex-wrap: wrap;
-
   margin-bottom: 10px;
 `
 const FlexHeading = styled(Heading)`
@@ -44,6 +42,11 @@ const Post = styled.div`
 const StyledLink = styled(Link)`
   text-decoration: none;
   color: var(--color-text);
+
+  margin-right: 10px;
+  &:last-child {
+    margin-right: 0;
+  }
 `
 
 const Posts = () => {
@@ -68,6 +71,14 @@ const Posts = () => {
     }
   `)
 
+  const categoriesArr = []
+
+  data.allMarkdownRemark.edges.forEach(edge => {
+    return categoriesArr.includes(edge.node.frontmatter.category)
+      ? null
+      : categoriesArr.push(edge.node.frontmatter.category)
+  })
+
   return (
     <Layout>
       <PageContainer>
@@ -75,7 +86,7 @@ const Posts = () => {
           Articles
         </Heading>
 
-        {categories.map(cat => {
+        {categoriesArr.map(cat => {
           return (
             <CategoryContainer key={`category-${cat}`}>
               <FlexHeading size={"2.2rem"} level={3}>
