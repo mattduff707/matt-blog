@@ -8,7 +8,7 @@ module.exports = ({ markdownAST }, pluginOptions) => {
     if (depth !== 1) return
     // Grab the innerText of the heading node
     let text = toString(node)
-    const html = `
+    const html = `S
         <h1 style="color: red">
           ${text}
         </h1>

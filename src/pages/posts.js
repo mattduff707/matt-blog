@@ -2,52 +2,54 @@ import React from "react"
 import Layout from "../components/layout/layout"
 import styled from "styled-components"
 import { Link, graphql, useStaticQuery } from "gatsby"
+import categories from "../constants/constants"
+import Heading from "../components/heading"
 
 const PageContainer = styled.section`
   border: black 2px solid;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   margin: 0px 100px;
 `
-const Heading = styled.h2`
-  font-size: 2rem;
-  text-decoration: underline;
-  margin-bottom: 0px;
+
+const CategoryContainer = styled.div`
+  display: flex;
+  border: blue dotted 2px;
+`
+const FlexHeading = styled(Heading)`
+  width: 100%;
+  border: red solid 2px;
 `
 
-const BlogContainer = styled.ol`
-  list-style: none;
-`
+// const BlogPost = styled.li`
+//   border-bottom: 2px indianred solid;
+//   margin-bottom: 30px;
+//   /* background-color: #d3d3d3;
+//   padding: 3px 5px; */
+// `
 
-const BlogPost = styled.li`
-  border-bottom: 2px indianred solid;
-  margin-bottom: 30px;
-  /* background-color: #d3d3d3;
-  padding: 3px 5px; */
-`
+// const BlogTitle = styled.h3`
+//   color: indianred;
+// `
 
-const BlogTitle = styled.h3`
-  color: indianred;
-`
+// const PublishedDate = styled.p`
+//   color: #333;
+//   text-decoration: none;
+//   font-size: 0.8rem;
+// `
 
-const PublishedDate = styled.p`
-  color: #333;
-  text-decoration: none;
-  font-size: 0.8rem;
-`
-
-const StyledLink = styled(Link)`
-  text-decoration: none;
-`
-const PostWrapper = styled.div`
-  padding: 25px 50px;
-  background-color: transparent;
-  ${StyledLink}:hover & {
-    background-color: #d3d3d3;
-  }
-`
+// const StyledLink = styled(Link)`
+//   text-decoration: none;
+// `
+// const PostWrapper = styled.div`
+//   padding: 25px 50px;
+//   background-color: transparent;
+//   ${StyledLink}:hover & {
+//     background-color: #d3d3d3;
+//   }
+// `
 
 const Posts = () => {
   const data = useStaticQuery(graphql`
@@ -73,8 +75,28 @@ const Posts = () => {
   return (
     <Layout>
       <PageContainer>
-        <Heading>Articles</Heading>
-        <BlogContainer>
+        <Heading size={"3rem"} level={2} margin={"20px 0px 20px 0px"}>
+          Articles
+        </Heading>
+
+        {categories.map(cat => {
+          return (
+            <CategoryContainer key={`category-${cat}`}>
+              <FlexHeading size={"2em"}>{cat}</FlexHeading>
+              <div>
+                {data.allMarkdownRemark.edges.map(edge => {
+                  return edge.node.frontmatter.category === cat ? (
+                    <div key={`post-${edge.node.frontmatter.title}`}>
+                      {edge.node.frontmatter.title}
+                    </div>
+                  ) : null
+                })}
+              </div>
+            </CategoryContainer>
+          )
+        })}
+
+        {/*         
           {data.allMarkdownRemark.edges.map(edge => {
             const edgeNode = edge.node
             return (
@@ -87,8 +109,7 @@ const Posts = () => {
                 </StyledLink>
               </BlogPost>
             )
-          })}
-        </BlogContainer>
+          })} */}
       </PageContainer>
     </Layout>
   )
