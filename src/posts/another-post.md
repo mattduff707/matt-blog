@@ -1,9 +1,9 @@
 ---
 date: "02/08/2020 9:30AM"
-title: "My First Gatsby Post"
+title: "useEffect hook examples"
 category: "React"
 tags: ["React", "HTML", "CSS"]
-description: "This post is all about the benefits of using react for making component based web apps!"
+description: "This post is all about the useEffect hook"
 ---
 
 # Hey This is Markdown

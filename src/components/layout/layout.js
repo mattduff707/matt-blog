@@ -7,14 +7,10 @@ import About from "./about"
 
 const GlobalStyles = createGlobalStyle`
   html {
-    --color-text: #383838;
-    --color-primary: ${props =>
-      props.theme === "dark"
-        ? "black"
-        : props.theme === "light"
-        ? "wheat"
-        : "red"};
-    --color-secondary: wheat;
+    --color-text: #f6aa1c;
+    --color-primary: #bc3908;
+    --color-secondary: #f6aa1c;
+    --color-alternative: #220901;
     --text-blog-post: 1.2em;
 
   }
@@ -31,9 +27,15 @@ const PageContainer = styled.div`
   grid-template-columns: 300px 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas:
-    "navigation main"
-    "accessibility main"
-    "about main";
+    "header main"
+    "header main"
+    "header main";
+`
+const HeaderWrapper = styled.header`
+  border-right: 2px solid var(--color-alternative);
+  grid-area: header;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
 `
 const MainCell = styled.main`
   grid-area: main;
@@ -43,11 +45,11 @@ const Layout = ({ children }) => {
   return (
     <PageContainer>
       <GlobalStyles />
-      <header>
+      <HeaderWrapper>
         <Nav />
         <Accessibility />
         <About />
-      </header>
+      </HeaderWrapper>
       <MainCell>{children}</MainCell>
     </PageContainer>
   )

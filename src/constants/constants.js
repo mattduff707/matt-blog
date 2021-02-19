@@ -1,3 +1,3 @@
-const categories = ["react", "html", "css", "accessibility", "responsive"]
+const categories = ["React", "HTML", "CSS", "Accessibility", "Responsive"]
 
 export default categories

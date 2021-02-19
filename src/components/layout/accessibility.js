@@ -3,7 +3,6 @@ import styled from "styled-components"
 import Heading from "../heading"
 
 const AccessibilityCell = styled.aside`
-  grid-area: accessibility;
   width: 100%;
   height: 100%;
   background-color: var(--color-primary);
@@ -27,19 +26,17 @@ const Test = styled.div`
   width: 100%;
 `
 
-const Accessibility = ({ changeTheme }) => {
+const Accessibility = () => {
   return (
     <AccessibilityCell>
       <Test>
-        <Heading level={1}>Settings</Heading>
+        <Heading level={1} secondary>
+          Settings
+        </Heading>
       </Test>
       <ButtonsUl>
-        <button onClick={changeTheme} value={"dark"}>
-          Theme
-        </button>
-        <button onClick={changeTheme} value={"light"}>
-          Text Size
-        </button>
+        <button value={"dark"}>Theme</button>
+        <button value={"light"}>Text Size</button>
       </ButtonsUl>
     </AccessibilityCell>
   )
