@@ -1,6 +1,6 @@
 import React from "react"
 import styled, { createGlobalStyle } from "styled-components"
-
+import "../../markdown.css"
 import Nav from "./nav"
 import Accessibility from "./accessibility"
 import About from "./about"

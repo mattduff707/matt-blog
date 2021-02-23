@@ -3,10 +3,10 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout/layout"
 import styled from "styled-components"
 import Heading from "../components/heading"
+import { makeDateMachineFormat } from "../constants/helpers"
 
 const PostWrapper = styled.article`
   display: grid;
-
   grid-template-columns:
     1fr
     min(65ch, 100%)
@@ -43,9 +43,14 @@ const BlogTemplate = ({ data }) => {
           <Heading size={"2.5em"} level={1} margin={"20px 0px 5px 0px"}>
             {markdownRemark.frontmatter.title}
           </Heading>
-          <Heading size={"1em"} level={2} margin={"0px 0px 20px 0px"}>
+          <time
+            dateTime={makeDateMachineFormat(markdownRemark.frontmatter.date)}
+            size={"1em"}
+            level={2}
+            margin={"0px 0px 20px 0px"}
+          >
             {markdownRemark.frontmatter.date}
-          </Heading>
+          </time>
           <div dangerouslySetInnerHTML={{ __html: markdownRemark.html }}></div>
         </PostWrapper>
       </Wrapper>

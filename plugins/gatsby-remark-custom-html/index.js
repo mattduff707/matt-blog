@@ -9,7 +9,7 @@ module.exports = ({ markdownAST }, pluginOptions) => {
     // Grab the innerText of the heading node
     let text = toString(node)
     const html = `
-        <h1 style="color: red">
+        <h1 class="heading-one">
           ${text}
         </h1>
       `

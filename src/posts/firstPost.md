@@ -1,5 +1,5 @@
 ---
-date: "02/08/2020 9:30AM"
+date: "02/08/2020"
 title: "My First Gatsby Post"
 category: "React"
 tags: ["React", "HTML", "CSS"]

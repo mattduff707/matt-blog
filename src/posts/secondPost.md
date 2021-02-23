@@ -1,5 +1,5 @@
 ---
-date: "02/09/2020 3:30pm"
+date: "02/09/2020"
 title: "Another Gatsby Post"
 category: "Accessibility"
 tags: ["Accessibility", "Responsive", "CSS"]

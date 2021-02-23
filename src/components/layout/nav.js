@@ -44,9 +44,6 @@ const nav = () => {
         <LinkContainer>
           <StyledLink to="/posts">Articles</StyledLink>
         </LinkContainer>
-        <LinkContainer>
-          <StyledLink to="/about">About</StyledLink>
-        </LinkContainer>
       </NavUl>
     </NavCell>
   )
