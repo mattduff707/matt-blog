@@ -8,7 +8,7 @@ import About from "./about"
 const GlobalStyles = createGlobalStyle`
   html {
     --color-text: #f6aa1c;
-    --color-primary: #bc3908;
+    --color-primary: hsl(16.4, 97.3%, 28.8%);
     --color-secondary: #f6aa1c;
     --color-alternative: #220901;
     --text-blog-post: 1.2em;

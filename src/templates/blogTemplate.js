@@ -5,6 +5,10 @@ import styled from "styled-components"
 import Heading from "../components/heading"
 import { makeDateMachineFormat } from "../constants/helpers"
 
+const Wrapper = styled.div`
+  background-color: var(--color-text);
+  min-height: 100vh;
+`
 const PostWrapper = styled.article`
   display: grid;
   grid-template-columns:
@@ -16,9 +20,11 @@ const PostWrapper = styled.article`
     grid-column: 2;
   }
 `
-const Wrapper = styled.div`
-  background-color: var(--color-text);
-  min-height: 100vh;
+
+const Content = styled.div`
+  line-height: 2;
+  padding: 30px 0px;
+  font-family: "monospace";
 `
 
 export const query = graphql`
@@ -51,7 +57,9 @@ const BlogTemplate = ({ data }) => {
           >
             {markdownRemark.frontmatter.date}
           </time>
-          <div dangerouslySetInnerHTML={{ __html: markdownRemark.html }}></div>
+          <Content
+            dangerouslySetInnerHTML={{ __html: markdownRemark.html }}
+          ></Content>
         </PostWrapper>
       </Wrapper>
     </Layout>

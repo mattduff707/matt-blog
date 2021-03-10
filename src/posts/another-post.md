@@ -1,5 +1,5 @@
 ---
-date: "02/08/2020 9:30AM"
+date: "02/08/2020"
 title: "useEffect hook examples"
 category: "React"
 tags: ["React", "HTML", "CSS"]
