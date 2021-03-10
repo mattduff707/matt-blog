@@ -39,7 +39,9 @@ export const query = graphql`
     }
   }
 `
-
+/*TODO*/
+/*Add sticky top nav for quickly navigating between sections of notes. */
+/*Research adding a vocab tooltip link on keywords*/
 const BlogTemplate = ({ data }) => {
   const markdownRemark = data.markdownRemark
   return (
