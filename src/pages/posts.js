@@ -27,15 +27,16 @@ const FlexHeading = styled(Heading)`
 const Post = styled.div`
   width: 300px;
   padding: 25px;
-  border: var(--color-primary) 2px solid;
+  border: var(--color-primary) 4px solid;
   background-color: var(--color-alternative);
-
+  transition: color 250ms ease, border 250ms ease, background-color 250ms ease;
   &:hover {
-    border: 2px solid var(--color-alternative);
+    border: 4px solid var(--color-alternative);
     background-color: var(--color-primary);
     color: var(--color-alternative);
     .post-heading {
       color: var(--color-text);
+      transition: color 500ms ease;
     }
   }
 `
@@ -71,13 +72,28 @@ const Posts = () => {
     }
   `)
 
-  const categoriesArr = []
+  // const categoriesArr = []
 
-  data.allMarkdownRemark.edges.forEach(edge => {
-    return categoriesArr.includes(edge.node.frontmatter.category)
-      ? null
-      : categoriesArr.push(edge.node.frontmatter.category)
-  })
+  // data.allMarkdownRemark.edges.forEach(edge => {
+  //   const category = edge.node.frontmatter.category
+
+  //   if (categoriesArr.indexOf(category) === -1) {
+  //     categoriesArr.push(category)
+  //   }
+  // * return categoriesArr.includes(edge.node.frontmatter.category)
+  // * ? null
+  // * : categoriesArr.push(edge.node.frontmatter.category)
+  // })
+
+  const categoriesArr = data.allMarkdownRemark.edges.reduce((newArr, edge) => {
+    const category = edge.node.frontmatter.category
+    if (newArr.indexOf(category) === -1) {
+      newArr.push(category)
+    }
+    return newArr
+  }, [])
+
+  // console.log(categoriesArr)
 
   return (
     <Layout>
