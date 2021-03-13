@@ -88,10 +88,9 @@ console.log(doubled) // [59.52, 83.7, 93]
 
 #### This project!
 
-In this use case we are dynamically generating the category headers for the articles page. Each markdown file in the project has a category stated in it's frontmatter. in my graphql query we fetch each markdown file in the posts folder to make them into nodes I can access (Using markdownRemark and gatsby-source-filesystem). The array of nodes we want to iterate on is found in the `data.allMarkdownRemark.edges`. Refer to snippet for
+In this use case we are dynamically generating the category headers for the articles page. Each markdown file in the project has a category stated in it's frontmatter. in my graphql query we fetch each markdown file in the posts folder to make them into nodes I can access (Using markdownRemark and gatsby-source-filesystem). The array of nodes we want to iterate on is found in the `data.allMarkdownRemark.edges`. 
 
 ```js
-// hightlight-start
 const data = useStaticQuery(graphql`
   query {
     allMarkdownRemark {

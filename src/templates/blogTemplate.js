@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout/layout"
 import styled from "styled-components"
@@ -44,6 +44,11 @@ export const query = graphql`
 /*Research adding a vocab tooltip link on keywords*/
 const BlogTemplate = ({ data }) => {
   const markdownRemark = data.markdownRemark
+  useEffect(() => {
+    let elementsArr = document.getElementsByClassName("heading-two")
+    console.log(elementsArr)
+  })
+
   return (
     <Layout>
       <Wrapper>

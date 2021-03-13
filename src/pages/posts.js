@@ -22,14 +22,17 @@ const CategoryContainer = styled.div`
 const FlexHeading = styled(Heading)`
   width: 100%;
   border-bottom: var(--color-alternative) solid 2px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 `
 const Post = styled.div`
   width: 300px;
   padding: 25px;
   border: var(--color-primary) 4px solid;
   background-color: var(--color-alternative);
-  transition: color 250ms ease, border 250ms ease, background-color 250ms ease;
+  transition: color 500ms ease, border 500ms ease, background-color 500ms ease;
+  .post-heading {
+    transition: color 500ms ease;
+  }
   &:hover {
     border: 4px solid var(--color-alternative);
     background-color: var(--color-primary);
