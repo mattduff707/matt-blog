@@ -9,3 +9,5 @@ description: "Vocab and terminology for the Javascript language"
 **Recursive**
 **Callback**
 **Key-value pair**
+**nodeList**
+**HTMLCollection**

@@ -46,7 +46,8 @@ const MainCell = styled.main`
   overflow-y: scroll;
 `
 
-const Layout = ({ children }) => {
+const Layout = ({ children, contentNav }) => {
+  console.log(contentNav)
   return (
     <PageContainer>
       <GlobalStyles />

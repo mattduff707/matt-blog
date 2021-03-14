@@ -44,13 +44,18 @@ export const query = graphql`
 /*Research adding a vocab tooltip link on keywords*/
 const BlogTemplate = ({ data }) => {
   const markdownRemark = data.markdownRemark
+  const valuesArr = []
+
   useEffect(() => {
-    let elementsArr = document.getElementsByClassName("heading-two")
-    console.log(elementsArr)
+    const elementsArr = document.querySelectorAll(".heading-two")
+
+    elementsArr.forEach(e => {
+      valuesArr.push(e.innerText)
+    })
   })
 
   return (
-    <Layout>
+    <Layout contentNav={valuesArr}>
       <Wrapper>
         <PostWrapper>
           <Heading size={"2.5em"} level={1} margin={"20px 0px 5px 0px"}>
