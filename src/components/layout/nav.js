@@ -6,6 +6,7 @@ const NavCell = styled.nav`
   display: flex;
   justify-content: center;
   height: 100%;
+  border-bottom: var(--color-secondary) 2px solid;
 `
 
 const NavUl = styled.ul`

@@ -2,8 +2,7 @@ import React from "react"
 import styled, { createGlobalStyle } from "styled-components"
 import "../../markdown.css"
 import Nav from "./nav"
-import Accessibility from "./accessibility"
-import About from "./about"
+import ContentNav from "./contentNav"
 
 const GlobalStyles = createGlobalStyle`
   html {
@@ -39,22 +38,21 @@ const HeaderWrapper = styled.header`
   border-right: 2px solid var(--color-alternative);
   grid-area: header;
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 2fr;
 `
 const MainCell = styled.main`
   grid-area: main;
   overflow-y: scroll;
+  scroll-behavior: smooth;
 `
 
-const Layout = ({ children, contentNav }) => {
-  console.log(contentNav)
+const Layout = ({ children, shortcuts }) => {
   return (
     <PageContainer>
       <GlobalStyles />
       <HeaderWrapper>
         <Nav />
-        <Accessibility />
-        <About />
+        <ContentNav shortcuts={shortcuts} />
       </HeaderWrapper>
       <MainCell>{children}</MainCell>
     </PageContainer>

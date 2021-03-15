@@ -113,8 +113,11 @@ const Posts = () => {
               </FlexHeading>
               {data.allMarkdownRemark.edges.map(edge => {
                 return edge.node.frontmatter.category === cat ? (
-                  <StyledLink to={edge.node.fields.slug}>
-                    <Post key={`post-${edge.node.frontmatter.title}`}>
+                  <StyledLink
+                    to={edge.node.fields.slug}
+                    key={`post-${edge.node.frontmatter.title}`}
+                  >
+                    <Post>
                       <Heading
                         className="post-heading"
                         level={4}

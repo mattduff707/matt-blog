@@ -8,8 +8,9 @@ module.exports = ({ markdownAST }, pluginOptions) => {
     if (depth === 2) {
       // Grab the innerText of the heading node
       let text = toString(node)
+      let headerId = text.split(" ").join("-")
       const html = `
-        <h2 class="heading-two">
+        <h2 class="heading-two" id="${headerId}">
           ${text}
         </h2>
       `
