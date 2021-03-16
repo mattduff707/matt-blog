@@ -26,6 +26,7 @@ const FlexHeading = styled(Heading)`
 `
 const Post = styled.div`
   width: 300px;
+  height: 100%;
   padding: 25px;
   border: var(--color-primary) 4px solid;
   background-color: var(--color-alternative);
@@ -47,7 +48,8 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   color: var(--color-text);
 
-  margin-right: 10px;
+  margin: 10px 10px 0px 0px;
+
   &:last-child {
     margin-right: 0;
   }

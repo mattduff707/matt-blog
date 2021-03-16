@@ -42,11 +42,9 @@ const ContentNav = ({ shortcuts }) => {
     setShortcutLinks(() => {
       return shortcuts
     })
-    console.log(shortcutLinks)
   }, [shortcuts, shortcutLinks])
 
   if (shortcuts) {
-    // console.log(shortcuts.map(e => e.innerText))
     return (
       <Wrapper>
         <Heading>Shortcuts</Heading>
@@ -64,7 +62,7 @@ const ContentNav = ({ shortcuts }) => {
   } else {
     return (
       <Wrapper>
-        <p>False</p>
+        <p>Category filters and search feature will appear here!</p>
       </Wrapper>
     )
   }

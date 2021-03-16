@@ -222,3 +222,71 @@ When using this approach don't forget that **ORDER MATTERS!**
 <br>
 
 ## Border
+
+There are three styles specific to border:
+
+1. `Border-width`
+2. `Border-style`
+3. `Border-color`
+
+   <br>
+
+These can be combined into the shorthand syntax much like `padding` and `margin`. The only required field is the `border-style`
+
+```css
+.box {
+  border: 3px solid hotpink;
+}
+```
+
+If you do not specify a `border` color, it will default to the font `color`.
+
+<br>
+
+**currentColor**: If you want to specify this behavior explicitly, it can be done with the special `currentColor` keyword!
+
+```css
+.box {
+  color: hotpink;
+  border: 1px solid currentColor;
+  box-shadow: 2px 2px 2px currentColor;
+}
+```
+
+### Border-radius
+
+Like `padding`, `border-radius` accepts discrete values for each direction. Unlike `padding`, it's focused on specific _corners_, not specific sides.
+<br>
+examples:
+
+```css
+.even-box {
+  border-radius: 25px;
+}
+.empty-glass {
+  border-radius: 10px 10px 40px 40px;
+}
+.individual-properties {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 32px;
+  border-bottom-left-radius: 64px;
+}
+.circle {
+  border-radius: 50%;
+}
+```
+
+### Border vs Outline
+
+The core difference between `outline` and `border` is that _outline does not affect layout_. Outline is like `box-shadow`; it's a cosmetic effect draped over an element, without nudging it around or changing its size. Outlines appear outside the element.
+
+<br>
+
+Other notes on outline:
+
+- There is no _outline-radius_, Outlines can not be rounded
+- Outlines have a special `outline-offset` property. It allow you to add a gap between the element and its outline.
+- Never remove the outline if it has not been replaced by an appropriate `:focus` style.
+
+## Margin

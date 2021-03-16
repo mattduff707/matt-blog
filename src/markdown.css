@@ -8,3 +8,12 @@
   color: var(--color-alternative);
   text-decoration: underline;
 }
+hr {
+  color: var(--color-primary);
+}
+em {
+  color: var(--color-primary);
+}
+em > strong {
+  color: var(--color-alternative);
+}
