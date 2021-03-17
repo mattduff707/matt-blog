@@ -3,6 +3,7 @@
   color: var(--color-primary);
   border-bottom: 1px solid var(--color-alternative);
 }
+
 .heading-three {
   font-size: 1.5rem;
   color: var(--color-alternative);
@@ -16,4 +17,12 @@ em {
 }
 em > strong {
   color: var(--color-alternative);
+}
+@media (max-width: 767px) {
+  .heading-two {
+    font-size: 1.5rem;
+  }
+  .heading-three {
+    font-size: 1.2rem;
+  }
 }

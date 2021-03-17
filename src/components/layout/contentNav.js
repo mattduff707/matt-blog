@@ -35,7 +35,7 @@ const Shortcut = styled.a`
   padding: 10px;
 `
 
-const ContentNav = ({ shortcuts }) => {
+const ContentNav = ({ shortcuts, clickToCloseMenu }) => {
   const [shortcutLinks, setShortcutLinks] = useState([])
 
   useEffect(() => {
@@ -52,7 +52,9 @@ const ContentNav = ({ shortcuts }) => {
           {shortcutLinks.map(e => {
             return (
               <ListItem key={`shortcut-${e.id}`}>
-                <Shortcut href={`#${e.id}`}>{e.innerText}</Shortcut>
+                <Shortcut onClick={clickToCloseMenu} href={`#${e.id}`}>
+                  {e.innerText}
+                </Shortcut>
               </ListItem>
             )
           })}

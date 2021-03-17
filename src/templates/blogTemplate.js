@@ -2,7 +2,6 @@ import React, { useEffect } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout/layout"
 import styled from "styled-components"
-import Heading from "../components/heading"
 import { makeDateMachineFormat } from "../constants/helpers"
 
 const Wrapper = styled.div`
@@ -19,10 +18,22 @@ const PostWrapper = styled.article`
   & > * {
     grid-column: 2;
   }
+  @media (max-width: 767px) {
+    padding: 0px 15px;
+  }
+`
+const PostHeading = styled.h1`
+  font-size: 2.5rem;
+  margin: 20px 0px 5px 0px;
+  @media (max-width: 1023px) {
+    font-size: 2rem;
+    margin-top: 55px;
+  }
 `
 
 const Content = styled.div`
   line-height: 2;
+  font-size: var(--text-blog-post);
   padding: 30px 0px;
   font-family: "monospace";
 `
@@ -58,14 +69,9 @@ const BlogTemplate = ({ data }) => {
     <Layout shortcuts={headersArr}>
       <Wrapper>
         <PostWrapper>
-          <Heading size={"2.5em"} level={1} margin={"20px 0px 5px 0px"}>
-            {markdownRemark.frontmatter.title}
-          </Heading>
+          <PostHeading>{markdownRemark.frontmatter.title}</PostHeading>
           <time
             dateTime={makeDateMachineFormat(markdownRemark.frontmatter.date)}
-            size={"1em"}
-            level={2}
-            margin={"0px 0px 20px 0px"}
           >
             {markdownRemark.frontmatter.date}
           </time>

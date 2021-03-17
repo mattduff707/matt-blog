@@ -1,8 +1,10 @@
-import React from "react"
+import React, { useState } from "react"
 import styled, { createGlobalStyle } from "styled-components"
 import "../../markdown.css"
 import Nav from "./nav"
 import ContentNav from "./contentNav"
+import OpenMenuBtn from "./openMenuBtn"
+import CloseMenuBtn from "./closeMenuBtn"
 
 const GlobalStyles = createGlobalStyle`
   html {
@@ -10,7 +12,11 @@ const GlobalStyles = createGlobalStyle`
     --color-primary: hsl(16.4, 97.3%, 28.8%);
     --color-secondary: #f6aa1c;
     --color-alternative: #220901;
-    --text-blog-post: 1.2em;
+    --text-blog-post: 1.1rem;
+    
+    @media(max-width: 768px) {
+      --text-blog-post: 1rem
+    }
 
   }
   * {
@@ -28,11 +34,15 @@ const PageContainer = styled.div`
   overflow: hidden;
   display: grid;
   grid-template-columns: 300px 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 100px;
   grid-template-areas:
     "header main"
     "header main"
     "header main";
+  @media (max-width: 1023px) {
+    grid-template-columns: ${props =>
+      props.isMenuOpen ? "1fr 0px" : "0px 1fr;"};
+  }
 `
 const HeaderWrapper = styled.header`
   border-right: 2px solid var(--color-alternative);
@@ -43,16 +53,34 @@ const HeaderWrapper = styled.header`
 const MainCell = styled.main`
   grid-area: main;
   overflow-y: scroll;
-  scroll-behavior: smooth;
 `
 
 const Layout = ({ children, shortcuts }) => {
+  const [openMenu, setOpenMenu] = useState(false)
+
+  const clickToOpenMenu = () => {
+    setOpenMenu(() => {
+      return true
+    })
+  }
+  const clickToCloseMenu = () => {
+    setOpenMenu(() => {
+      return false
+    })
+  }
+
   return (
-    <PageContainer>
+    <PageContainer isMenuOpen={openMenu}>
       <GlobalStyles />
       <HeaderWrapper>
-        <Nav />
-        <ContentNav shortcuts={shortcuts} />
+        <OpenMenuBtn isMenuOpen={openMenu} clickToOpenMenu={clickToOpenMenu}>
+          Menu
+        </OpenMenuBtn>
+        <CloseMenuBtn isMenuOpen={openMenu} clickToCloseMenu={clickToCloseMenu}>
+          x
+        </CloseMenuBtn>
+        <Nav clickToCloseMenu={clickToCloseMenu} />
+        <ContentNav clickToCloseMenu={clickToCloseMenu} shortcuts={shortcuts} />
       </HeaderWrapper>
       <MainCell>{children}</MainCell>
     </PageContainer>

@@ -35,15 +35,19 @@ const StyledLink = styled(Link)`
   }
 `
 
-const nav = () => {
+const nav = ({ clickToCloseMenu }) => {
   return (
     <NavCell>
       <NavUl>
         <LinkContainer>
-          <StyledLink to="/">Main</StyledLink>
+          <StyledLink onClick={clickToCloseMenu} to="/">
+            Main
+          </StyledLink>
         </LinkContainer>
         <LinkContainer>
-          <StyledLink to="/posts">Articles</StyledLink>
+          <StyledLink onClick={clickToCloseMenu} to="/posts">
+            Notes
+          </StyledLink>
         </LinkContainer>
       </NavUl>
     </NavCell>
