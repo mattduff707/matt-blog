@@ -16,6 +16,9 @@ const GlobalStyles = createGlobalStyle`
     --text-blog-post: 1.2em;
 
   }
+  body {
+    background-color: var(--color-primary)
+  }
   * {
     box-sizing: border-box;
     margin: 0;
