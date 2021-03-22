@@ -12,7 +12,7 @@ const PostWrapper = styled.article`
   display: grid;
   grid-template-columns:
     1fr
-    min(65ch, 100%)
+    min(75ch, 100%)
     1fr;
 
   & > * {

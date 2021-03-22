@@ -31,7 +31,7 @@ const StyledLink = styled(Link)`
   border: 2px transparent solid;
   padding: 15px 25px 5px 25px;
   &:hover {
-    border-bottom: 2px var(--color-alternative) solid;
+    border-bottom: 2px var(--color-accent) solid;
   }
 `
 

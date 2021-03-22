@@ -24,7 +24,7 @@ const ListItem = styled.li`
   width: 100%;
   color: var(--color-secondary);
   &:hover {
-    color: var(--color-alternative);
+    color: var(--color-accent);
   }
 `
 const Shortcut = styled.a`

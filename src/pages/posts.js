@@ -35,36 +35,39 @@ const CategoryHeading = styled.h2`
   border-bottom: var(--color-alternative) solid 2px;
   margin-bottom: 30px;
 `
+const PostHeading = styled.h3`
+  font-size: 1.2em;
+  color: var(--color-accent);
+  margin: 0px 0px 5px 0px;
+  &:hover {
+    color: var(--color-alternative);
+  }
+`
+
 const Post = styled.div`
   width: 300px;
   height: 100%;
   padding: 25px;
-  border: var(--color-primary) 4px solid;
-  background-color: var(--color-alternative);
+  border: var(--color-alternative) 4px solid;
+  background-color: var(--color-primary);
   transition: color 500ms ease, border 500ms ease, background-color 500ms ease;
   .post-heading {
     transition: color 500ms ease;
   }
-  &:hover {
-    border: 4px solid var(--color-alternative);
-    background-color: var(--color-primary);
-    color: var(--color-alternative);
-    .post-heading {
-      color: var(--color-text);
-      transition: color 500ms ease;
-    }
-  }
 `
-const PostHeading = styled.h3`
-  font-size: 1.2em;
-  color: var(--color-primary);
-  margin: 0px 0px 5px 0px;
-`
+
 const StyledLink = styled(Link)`
   text-decoration: none;
-  color: var(--color-text);
+  color: var(--color-secondary);
 
   margin: 10px 10px 0px 0px;
+
+  &:hover {
+    color: var(--color-alternative);
+  }
+  &:hover ${PostHeading} {
+    color: var(--color-alternative);
+  }
 
   &:last-child {
     margin-right: 0px;
