@@ -6,7 +6,7 @@ import Heading from "../components/heading"
 import { makeDateMachineFormat } from "../constants/helpers"
 
 const Wrapper = styled.div`
-  background-color: var(--color-text);
+  background-color: var(--color-secondary);
   min-height: 100vh;
 `
 const PostWrapper = styled.article`

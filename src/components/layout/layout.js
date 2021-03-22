@@ -6,10 +6,11 @@ import ContentNav from "./contentNav"
 
 const GlobalStyles = createGlobalStyle`
   html {
-    --color-text: #f6aa1c;
-    --color-primary: hsl(16.4, 97.3%, 28.8%);
-    --color-secondary: #f6aa1c;
-    --color-alternative: #220901;
+    --color-text-dark: hsl(0, 1%, 26%);
+    --color-primary: hsl(0, 1%, 26%);
+    --color-secondary: hsl(55, 48%, 90%);
+    --color-alternative: hsl(0, 100%, 50%);
+    --color-accent: hsl(175.27, 66.27%, 51.18%)
     --text-blog-post: 1.2em;
 
   }
