@@ -35,18 +35,16 @@ const Shortcut = styled.a`
   padding: 10px;
 `
 
-const ContentNav = ({ shortcuts }) => {
+const ContentNav = ({ shortcuts, clickToCloseMenu }) => {
   const [shortcutLinks, setShortcutLinks] = useState([])
 
   useEffect(() => {
     setShortcutLinks(() => {
       return shortcuts
     })
-    console.log(shortcutLinks)
   }, [shortcuts, shortcutLinks])
 
   if (shortcuts) {
-    // console.log(shortcuts.map(e => e.innerText))
     return (
       <Wrapper>
         <Heading>Shortcuts</Heading>
@@ -54,7 +52,9 @@ const ContentNav = ({ shortcuts }) => {
           {shortcutLinks.map(e => {
             return (
               <ListItem key={`shortcut-${e.id}`}>
-                <Shortcut href={`#${e.id}`}>{e.innerText}</Shortcut>
+                <Shortcut onClick={clickToCloseMenu} href={`#${e.id}`}>
+                  {e.innerText}
+                </Shortcut>
               </ListItem>
             )
           })}
@@ -64,7 +64,7 @@ const ContentNav = ({ shortcuts }) => {
   } else {
     return (
       <Wrapper>
-        <p>False</p>
+        <p>Category filters and search feature will appear here!</p>
       </Wrapper>
     )
   }

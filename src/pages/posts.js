@@ -2,7 +2,6 @@ import React from "react"
 import Layout from "../components/layout/layout"
 import styled from "styled-components"
 import { Link, graphql, useStaticQuery } from "gatsby"
-import Heading from "../components/heading"
 
 const PageContainer = styled.section`
   background-color: var(--color-secondary);
@@ -11,21 +10,34 @@ const PageContainer = styled.section`
   align-items: flex-start;
   padding: 0px 100px;
   min-height: 100vh;
+  @media (max-width: 1024px) {
+    padding: 0px 20px;
+  }
+`
+const PageHeading = styled.h1`
+  font-size: 3rem;
+  margin: 55px auto 20px auto;
 `
 
 const CategoryContainer = styled.div`
   display: flex;
+
   width: 100%;
   flex-wrap: wrap;
   margin-bottom: 10px;
+  @media (max-width: 600px) {
+    justify-content: center;
+  }
 `
-const FlexHeading = styled(Heading)`
+const CategoryHeading = styled.h2`
   width: 100%;
+  font-size: 2.2rem;
   border-bottom: var(--color-alternative) solid 2px;
   margin-bottom: 30px;
 `
 const Post = styled.div`
   width: 300px;
+  height: 100%;
   padding: 25px;
   border: var(--color-primary) 4px solid;
   background-color: var(--color-alternative);
@@ -43,13 +55,22 @@ const Post = styled.div`
     }
   }
 `
+const PostHeading = styled.h3`
+  font-size: 1.2em;
+  color: var(--color-primary);
+  margin: 0px 0px 5px 0px;
+`
 const StyledLink = styled(Link)`
   text-decoration: none;
   color: var(--color-text);
 
-  margin-right: 10px;
+  margin: 10px 10px 0px 0px;
+
   &:last-child {
-    margin-right: 0;
+    margin-right: 0px;
+  }
+  @media (max-width: 600px) {
+    margin-right: 0px;
   }
 `
 
@@ -101,16 +122,12 @@ const Posts = () => {
   return (
     <Layout>
       <PageContainer>
-        <Heading size={"3rem"} level={2} margin={"20px auto 20px auto"}>
-          Articles
-        </Heading>
+        <PageHeading>Notes</PageHeading>
 
         {categoriesArr.map(cat => {
           return (
             <CategoryContainer key={`category-${cat}`}>
-              <FlexHeading size={"2.2rem"} level={3}>
-                {cat}
-              </FlexHeading>
+              <CategoryHeading>{cat}</CategoryHeading>
               {data.allMarkdownRemark.edges.map(edge => {
                 return edge.node.frontmatter.category === cat ? (
                   <StyledLink
@@ -118,15 +135,9 @@ const Posts = () => {
                     key={`post-${edge.node.frontmatter.title}`}
                   >
                     <Post>
-                      <Heading
-                        className="post-heading"
-                        level={4}
-                        size={"1.2rem"}
-                        margin={"0px 0px 5px 0px"}
-                        primary
-                      >
+                      <PostHeading className="post-heading">
                         {edge.node.frontmatter.title}
-                      </Heading>
+                      </PostHeading>
                       <p>{edge.node.frontmatter.description}</p>
                     </Post>
                   </StyledLink>
