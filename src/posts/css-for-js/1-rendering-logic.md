@@ -290,3 +290,23 @@ Other notes on outline:
 - Never remove the outline if it has not been replaced by an appropriate `:focus` style.
 
 ## Margin
+
+_Margin_ increases the space around an element
+
+### Syntax
+
+The syntax for `margin` is very similar to padding. One of the key differences is that `margin` allows **negative** values.
+
+### Negative Margin
+
+A few examples of the strange things negative `margin` does are:
+
+- Pull an element outside its parent
+- Pull a sibling closer
+- Affect the position of _all siblings_
+
+### Auto Margins
+
+Margins have a trick when using `'auto'` as its value, it can center an element! The `auto`
+value seeks to fill the _maximum available space_. The `width` property works the same way.
+If `margin-left: auto; margin-right: auto` Then it will center an element horizontally, if its parent has a **fixed** width.
