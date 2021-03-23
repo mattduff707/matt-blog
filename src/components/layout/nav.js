@@ -18,20 +18,28 @@ const NavUl = styled.ul`
   list-style: none;
   padding: 20px 0px;
 `
-
+const UnderLiner = styled.div`
+  width: 0px;
+  height: 2px;
+  background-color: var(--color-accent);
+  transition: width 400ms ease;
+`
 const LinkContainer = styled.li`
-  margin: 20px 5px;
+  margin: 20px auto;
   text-align: center;
 `
 
 const StyledLink = styled(Link)`
+  display: flex;
+  flex-direction: column;
   text-decoration: none;
   color: var(--color-secondary);
   font-size: 1.8rem;
   border: 2px transparent solid;
   padding: 15px 25px 5px 25px;
-  &:hover {
-    border-bottom: 2px var(--color-accent) solid;
+  &:hover ${UnderLiner} {
+    width: 100%;
+    transition: width 400ms ease;
   }
 `
 
@@ -42,11 +50,13 @@ const nav = ({ clickToCloseMenu }) => {
         <LinkContainer>
           <StyledLink onClick={clickToCloseMenu} to="/">
             Main
+            <UnderLiner />
           </StyledLink>
         </LinkContainer>
         <LinkContainer>
           <StyledLink onClick={clickToCloseMenu} to="/posts">
             Notes
+            <UnderLiner />
           </StyledLink>
         </LinkContainer>
       </NavUl>

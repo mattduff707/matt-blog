@@ -3,6 +3,16 @@ import Layout from "../components/layout/layout"
 import styled from "styled-components"
 import { Link, graphql, useStaticQuery } from "gatsby"
 
+const Liner = styled.div`
+  width: 0px;
+  height: 7px;
+  background-color: var(--color-accent);
+  transition: width 500ms ease;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+`
+
 const PageContainer = styled.section`
   background-color: var(--color-secondary);
   display: flex;
@@ -39,33 +49,46 @@ const PostHeading = styled.h3`
   font-size: 1.2em;
   color: var(--color-accent);
   margin: 0px 0px 5px 0px;
-  &:hover {
-    color: var(--color-alternative);
-  }
+  transition: color 500ms ease;
 `
 
 const Post = styled.div`
+  position: relative;
   width: 300px;
   height: 100%;
   padding: 25px;
-  border: var(--color-alternative) 4px solid;
+
   background-color: var(--color-primary);
-  transition: color 500ms ease, border 500ms ease, background-color 500ms ease;
-  .post-heading {
-    transition: color 500ms ease;
-  }
 `
 
 const StyledLink = styled(Link)`
   text-decoration: none;
   color: var(--color-secondary);
+  transition: color 500ms ease;
 
-  margin: 10px 10px 0px 0px;
+  margin: 15px 15px 0px 0px;
 
   &:hover {
     color: var(--color-alternative);
+    transition: color 500ms ease;
   }
   &:hover ${PostHeading} {
+    color: var(--color-alternative);
+    transition: color 500ms ease;
+  }
+  &:hover ${Liner} {
+    width: 100%;
+    transition: width 500ms ease;
+  }
+  &:focus ${Liner} {
+    width: 100%;
+    transition: width 500ms ease;
+  }
+
+  &:focus {
+    color: var(--color-alternative);
+  }
+  &:focus ${PostHeading} {
     color: var(--color-alternative);
   }
 
@@ -138,10 +161,9 @@ const Posts = () => {
                     key={`post-${edge.node.frontmatter.title}`}
                   >
                     <Post>
-                      <PostHeading className="post-heading">
-                        {edge.node.frontmatter.title}
-                      </PostHeading>
+                      <PostHeading>{edge.node.frontmatter.title}</PostHeading>
                       <p>{edge.node.frontmatter.description}</p>
+                      <Liner />
                     </Post>
                   </StyledLink>
                 ) : null

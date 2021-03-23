@@ -45,7 +45,8 @@ const PageContainer = styled.div`
   }
 `
 const HeaderWrapper = styled.header`
-  border-right: 2px solid var(--color-alternative);
+  border-right: 8px solid var(--color-primary);
+  border-left: 8px solid var(--color-primary);
   grid-area: header;
   display: grid;
   grid-template-rows: 1fr 2fr;
