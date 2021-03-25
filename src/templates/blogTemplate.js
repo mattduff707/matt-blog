@@ -4,7 +4,7 @@ import Layout from "../components/layout/layout"
 import styled from "styled-components"
 import { makeDateMachineFormat } from "../constants/helpers"
 
-const Wrapper = styled.div`
+const Wrapper = styled.article`
   background-color: var(--color-secondary);
   min-height: 100vh;
 `

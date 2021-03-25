@@ -11,7 +11,7 @@ const GlobalStyles = createGlobalStyle`
     --color-text-dark: hsl(0, 1%, 26%);
     --color-primary: hsl(0, 1%, 26%);
     --color-secondary: hsl(55, 48%, 90%);
-    --color-alternative: hsl(0, 100%, 50%);
+    --color-alternative: hsl(0, 100%, 40%);
     --color-accent: hsl(169, 94%, 71%);
     --text-blog-post: 1.2em;
 
@@ -50,6 +50,10 @@ const HeaderWrapper = styled.header`
   grid-area: header;
   display: grid;
   grid-template-rows: 1fr 2fr;
+  display: visible;
+  @media (max-width: 1023px) {
+    display: ${props => (props.isMenuOpen ? "visible" : "none")};
+  }
 `
 const MainCell = styled.main`
   grid-area: main;
@@ -73,16 +77,16 @@ const Layout = ({ children, shortcuts }) => {
   return (
     <PageContainer isMenuOpen={openMenu}>
       <GlobalStyles />
-      <HeaderWrapper>
-        <OpenMenuBtn isMenuOpen={openMenu} clickToOpenMenu={clickToOpenMenu}>
-          Menu
-        </OpenMenuBtn>
+      <HeaderWrapper isMenuOpen={openMenu}>
         <CloseMenuBtn isMenuOpen={openMenu} clickToCloseMenu={clickToCloseMenu}>
           x
         </CloseMenuBtn>
         <Nav clickToCloseMenu={clickToCloseMenu} />
         <ContentNav clickToCloseMenu={clickToCloseMenu} shortcuts={shortcuts} />
       </HeaderWrapper>
+      <OpenMenuBtn isMenuOpen={openMenu} clickToOpenMenu={clickToOpenMenu}>
+        Menu
+      </OpenMenuBtn>
       <MainCell>{children}</MainCell>
     </PageContainer>
   )

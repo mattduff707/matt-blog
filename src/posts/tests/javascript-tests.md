@@ -15,3 +15,4 @@ description: "Personal test questions for Javascript"
 1. **Name the benefits of immutability in programming**
 2. **Write an example function that uses recursion**
 3. **Define what makes a _Pure Function_**
+4. **Name the 8 ways to handle state in React apps**

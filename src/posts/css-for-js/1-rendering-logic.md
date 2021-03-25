@@ -310,3 +310,51 @@ A few examples of the strange things negative `margin` does are:
 Margins have a trick when using `'auto'` as its value, it can center an element! The `auto`
 value seeks to fill the _maximum available space_. The `width` property works the same way.
 If `margin-left: auto; margin-right: auto` Then it will center an element horizontally, if its parent has a **fixed** width.
+
+## Flow Layout
+
+Flow layout is the default layout mode. Every HTML element has an intrinsic `display` value of either **inline, block, inline-block**.
+
+<br>
+
+`Inline` elements are meant to highlight a selection of text. examples: `<strong>` `<em>` `<a>`
+
+<br>
+
+Most elements are `block` elements. `<div>` and all its semantic HTML5 alternatives would be examples of block elements.
+
+<br>
+
+`Block` and `inline` do more than just decide direction of elements. There are a set of _rules_ that these display types follow.
+
+### Inline elements
+
+`Inline` elements try to avoid affecting its surroundings. Therefore you will find that many css properties don't work when applied to an `inline` element. examples: `height`, `width`. They are like a polite dinner guest trying to avoid bothering everyone else.
+
+<br>
+
+There are exceptions to this rule. The first is _replaced elements_.
+A replaced element is one that embeds a "foreign" object This includes: `<img />` `<video />` `<canvas />`.
+<br>
+
+The other exception is the `<button>` tag.
+
+### Inline elements "Magic-space"
+
+Things like images can have a sneaky bit of extra space due to their `inline` heritage. Browsers treat inline elements like they are typography. It makes sense to have some extra height above text so the lines don't feel crammed together. But it can be less than ideal when just adding an image. It can be fixed by setting images to `display: block`
+
+### Inline elements can line-wrap
+
+Inline elements have a pretty big trick up their sleeve: line-wrapping. Unlike block elements, an inline element can produce shapes other than boxes by wrapping lines. Which explains why many css properties don't work on inline elements. What would it even mean to add vertical margin to a wrapped line of text?
+
+### Block elements
+
+When you place a block level element on the page, its content box expands to fill the entire available horizontal space. You can force it to shrink down if you add the special `fit-content` keyword as its width property.
+
+### Inline-block
+
+Inline-block allows you to drop a block element into an inline context. It is an element that _internally_ acts like a block element, but _externally_ acts like an inline element. The parent container will treat it as an inline element, since it's external. but the element itself can be styled like a block.
+
+ <br>
+
+**Inline-block elements DO NOT WRAP**
