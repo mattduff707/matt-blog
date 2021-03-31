@@ -33,7 +33,7 @@ const PostHeading = styled.h1`
 
 const Content = styled.div`
   line-height: 2;
-  font-size: var(--text-blog-post);
+  font-size: var(--text-note);
   padding: 30px 0px;
   font-family: "monospace";
 `
@@ -50,10 +50,8 @@ export const query = graphql`
     }
   }
 `
-/*TODO*/
-/*Add sticky top nav for quickly navigating between sections of notes. */
-/*Research adding a vocab tooltip link on keywords*/
-const BlogTemplate = ({ data }) => {
+
+const NoteTemplate = ({ data }) => {
   const markdownRemark = data.markdownRemark
   const headersArr = []
 
@@ -84,4 +82,4 @@ const BlogTemplate = ({ data }) => {
   )
 }
 
-export default BlogTemplate
+export default NoteTemplate

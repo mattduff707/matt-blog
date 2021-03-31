@@ -68,28 +68,18 @@ const StyledLink = styled(Link)`
 
   margin: 15px 15px 0px 0px;
 
-  &:hover {
-    color: var(--color-alternative);
-    transition: color 500ms ease;
-  }
-  &:hover ${PostHeading} {
-    color: var(--color-alternative);
-    transition: color 500ms ease;
-  }
-  &:hover ${Liner} {
-    width: 100%;
-    transition: width 500ms ease;
-  }
-  &:focus ${Liner} {
-    width: 100%;
-    transition: width 500ms ease;
-  }
-
+  &:hover,
   &:focus {
     color: var(--color-alternative);
+    transition: color 500ms ease;
   }
-  &:focus ${PostHeading} {
+  &:hover ${PostHeading}, &:focus ${PostHeading} {
     color: var(--color-alternative);
+    transition: color 500ms ease;
+  }
+  &:hover ${Liner}, &:focus ${Liner} {
+    width: 100%;
+    transition: width 500ms ease;
   }
 
   &:last-child {
@@ -122,28 +112,14 @@ const Posts = () => {
     }
   `)
 
-  // const categoriesArr = []
-
-  // data.allMarkdownRemark.edges.forEach(edge => {
-  //   const category = edge.node.frontmatter.category
-
-  //   if (categoriesArr.indexOf(category) === -1) {
-  //     categoriesArr.push(category)
-  //   }
-  // * return categoriesArr.includes(edge.node.frontmatter.category)
-  // * ? null
-  // * : categoriesArr.push(edge.node.frontmatter.category)
-  // })
-
   const categoriesArr = data.allMarkdownRemark.edges.reduce((newArr, edge) => {
     const category = edge.node.frontmatter.category
+    // If a category is not already present in the array already (Which would return -1), it is pushed to the array.
     if (newArr.indexOf(category) === -1) {
       newArr.push(category)
     }
     return newArr
   }, [])
-
-  // console.log(categoriesArr)
 
   return (
     <Layout>
@@ -171,21 +147,6 @@ const Posts = () => {
             </CategoryContainer>
           )
         })}
-
-        {/*         
-          {data.allMarkdownRemark.edges.map(edge => {
-            const edgeNode = edge.node
-            return (
-              <BlogPost key={edgeNode.frontmatter.title}>
-                <StyledLink to={edgeNode.fields.slug}>
-                  <PostWrapper>
-                    <BlogTitle>{edgeNode.frontmatter.title}</BlogTitle>
-                    <PublishedDate>{edgeNode.frontmatter.date}</PublishedDate>
-                  </PostWrapper>
-                </StyledLink>
-              </BlogPost>
-            )
-          })} */}
       </PageContainer>
     </Layout>
   )

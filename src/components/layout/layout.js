@@ -13,7 +13,7 @@ const GlobalStyles = createGlobalStyle`
     --color-secondary: hsl(55, 48%, 90%);
     --color-alternative: hsl(0, 100%, 40%);
     --color-accent: hsl(169, 94%, 71%);
-    --text-blog-post: 1.2em;
+    --text-note: 1.2em;
 
   }
   body {

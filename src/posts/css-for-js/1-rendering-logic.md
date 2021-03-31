@@ -358,3 +358,51 @@ Inline-block allows you to drop a block element into an inline context. It is an
  <br>
 
 **Inline-block elements DO NOT WRAP**
+
+## Width Algorithms
+
+Block elements have a default width of `auto`. A width of auto works very similarly to `margin: auto`. It is a hungry value that will try to grow as much as it is able _but **NO MORE** than what is available_. By default, block elements have _dynamic styling_. They are context-aware.
+
+<br>
+
+### Value Types
+
+Broadly speaking there are 2 types of values that can be specified for `width`.
+
+1. **Measurements**: `100%`, `200px`, `5rem`
+2. **Keywords**: `auto`, `fit-content`
+
+**Measurement** based values are either completely explicit (200px will be 200px). or relative to the parents available space.
+<br>
+
+**Keywords** will let us specify different sorts of behaviors depending on the context.
+
+### Keyword: min-content
+
+When using `width: min-content`, we are specifying that we want our content to become as small as it can, _based on the child contents_. This is an _intrinsic value_. It chooses the smallest possible value for width that still contains each word. Whenever it encounters whitespace or a hyphenated word, it will break it onto a new line.
+
+<br>
+
+**Intrinsic size:** Size of an element would be based on its content (content-based), if no external factors were applied to it. Inline elements are defaulted to intrinsic values. **examples**: `min-content`, `max-content`.
+<br>
+
+**Extrinsic size:** Size of an element is based on their context (context-based). Extrinsic sizing determines sizes without regard for its content. Block elements default to extrinsic values. **examples**: `auto`, `0-100%`, `200px`
+
+<br>
+
+### Keyword: max-content
+
+This value is similar to min-content in principle, but it takes the opposite strategy: it **never** adds any line-breaks. The elements width will be the smallest value that contains the content, without breaking it up. It pays no attention to the constraints set by its parent element.
+
+### Keyword: fit-content
+
+`fit-content` is like the perfect middle of `max-content` and `min-content`. If the width of the children fit within the parent container, it behaves just like `max-content`, not adding line-breaks. if the content is too wide to fit, it will line break just like `width: auto`.
+
+## Height Algorithms
+
+In some ways the `height` algorithms are similar to `width` algorithms. If an element has `height: 50%`, that element will be forced to take up half of its parents height. No more, no less.
+<br>
+
+In other ways they are very different. Default `width` behavior of a block-level element is to fill all the available width, whereas the default `height` behavior is to be as **small** as possible while fitting all of the element's content.
+
+Height is generally thought of as more dynamic than width.
