@@ -6,46 +6,6 @@ tags: ["project-management"]
 description: "Agile course on coursera"
 ---
 
-## Vocabulary
-
-_Agile_ is an overarching approach and philosophy to deliver value to customers.
-
-<br>
-
-_Waterfall:_ The sequential or linear ordering of phases. One phase at a time. Not moving on until the current phase is complete
-
-<br>
-
-_Agile Methodology:_ Projects that adopt an agile project management take an iterative approach, which means the project processes are repeated often many times during the life cycle of the project. Individual iterations might get repeated depending on the feedback received. During each iteration, the team takes a subset of all the project's activities and does all the work required to complete that subset. Like many mini _waterfalls_. The purpose of this approach is to enable it to move quickly and adapt well to change.
-
-<br>
-
-_Agile Project Management:_ An approach to project and team management that embodies "agility" and is based on the **Agile Manifesto**.
-
-<br>
-
-_The Manifesto:_ Collection of **four values** and **twelve principles** that define the mindset that all Agile teams should strive for.
-
-<br>
-
-_Requirements:_ Conditions that must be met or tasks that must be finished to ensure the successful completion of the project.
-
-<br>
-
-_Deliverable:_ A tangible outcome from a project.
-
-<br>
-
-_Product Backlog:_ The central artifact in Scrum, where all possible ideas, deliverables, features, or tasks are captured for the team to work on.
-
-<br>
-
-_Sprint:_ A time-boxed iteration in Scrum where work is done.
-
-<br>
-
-_Daily Scrum:_ A meeting of 15 or fewer minutes every day of the sprint.
-
 ## The four principles of Agile
 
 1. _Individuals and interactions_ over processes and tools
