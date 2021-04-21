@@ -8,32 +8,6 @@ description: "Notes on Scrum"
 
 ## Vocabulary
 
-_Scrum Guide:_ Main source of truth for Scrum Teams and is available for free at Scrumguides.org
-
-_Scrum:_ A framework for developing, delivering, and sustaining complex products.
-
-_Iterative:_ Repeating cycles of delivery
-
-_Incremental:_ Work is divided into smaller chunks that build on each other.
-
-_Empiricism:_ The idea that true knowledge comes from actual, lived experience.
-
-_Mission:_ A short statement that stays constant for your team throughout the process and gives them something to work toward.
-
-_Product Vision:_ When you set a vision, you're making it clear what the team is responsible for and where your team's boundaries are.
-
-_Product Backlog:_ The single authoritative source for things that a team works on to achieve the project goal
-
-- Product features
-- Product requirements
-- Activities associated with product deliverables
-
-_Sprint Backlog:_ Set of Product backlog items that are selected to be completed during the upcoming sprint
-
-_Timebox:_ Scrum concept that refers to the estimated duration for an event
-
-_Definition of Done:_ Agreed upon set of items that must be completed before a project or user story can be considered complete
-
 ## Three Pillars of Scrum
 
 1. **Transparency:** Make the most significant aspects of our work visible to those responsible for the outcome.
