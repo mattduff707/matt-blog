@@ -54,3 +54,23 @@ _Low cohesion:_ Encapsulates more than one purpose or has an unclear purpose
 
 **Sequence Diagram:** Used to show how objects in your program interact with each other to complete tasks
 <br>
+
+## UML State Diagram
+
+**UML State Diagram:** Technique that you can use to describe how your system behaves and responds
+<br>
+
+**State Diagrams:** Describe a single object and illustrate how that object behaves in response to a series of events in your system
+<br>
+
+**State:** The way an object exists at a particular point in time. The state of an object is determined by the values of its attributes
+<br>
+
+**Entry Activities:** Actions that occur when the state is just entered from another state
+<br>
+
+**Exit Activities:** Actions that occur when the state is exited and moves on to another state.
+<br>
+
+**Do Activities:** Actions that occur once, or multiple times while the object is in a certain st
+<br>
