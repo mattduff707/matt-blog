@@ -147,3 +147,16 @@ _Velocity:_ The measure of how many points the team burns down in a given sprint
 <br>
 
 _Work in progress limits (WIP Limits):_ Constraints on how many work items the team actively works on at any given time
+
+<br>
+
+_Value Roadmap:_ An Agile way of mapping out the product development process. It is a guide that demonstrates **Where to go, How to get there, What to accomplish along the way.**. It also helps the team explain the vision of the product and identify important milestones.
+<br>
+
+3 Components of a **Value Roadmap**:
+
+- Product Vision
+- Product roadmap
+- Release plans
+
+<br>
